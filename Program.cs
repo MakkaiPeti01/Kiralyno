@@ -12,6 +12,10 @@ namespace Kiralyno
         char UresCella;
         int UresOszlopokSzama;
         int UresSorokSzama;
+        public Tabla(char ch)
+        {
+            
+        }
         public void Elhelyez()
         { 
             
@@ -23,11 +27,6 @@ namespace Kiralyno
         public void Megjelenit()
         {
 
-        }
-        public char Table()
-        {
-           
-            
         }
         public int UresOszlop()
         {
