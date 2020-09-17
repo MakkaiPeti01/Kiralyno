@@ -58,13 +58,19 @@ namespace Kiralyno
                 }
             }
         }
-        public int UresOszlop()
+        public bool UresOszlop(int oszlop)
         {
-            return 0;
+            //Ha talál "K" akkor hamissal tér vissza
+            bool vissza = true;
+            //üres-e a sor
+            /*1 ciklus, a soron végig
+             * ha T[sor[i] meg T[i, oszlop]
+             * */
+            return vissza;
         }
-        public int UresSor()
+        public bool UresSor(int sor)
         {
-            return 0;
+            return true;
         }
     }
     class Program
