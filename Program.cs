@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +17,7 @@ namespace Kiralyno
             T = new char[8, 8];
             UresCella = ch;
             for (int i = 0; i < 8; i++)
-            {
+            {   
                 for (int j = 0; j < 8; j++)
                 {
                     T[i, j] = UresCella;
@@ -30,23 +30,20 @@ namespace Kiralyno
             //Random osztály értékek halmaza [0,7]
             //véletlen sor és oszlop
             //elhelyezzük a "K"t csak akkor, ha "#" van 
-            for (int i = 0; i < 8; i++)
+            Random vel = new Random();          
+            for (int i = 0; i < vel.Next(0,65); i++)
             {
-                for (int j = 0; j < 8; j++)
+                int sor = vel.Next(0, 8);
+                int oszlop = vel.Next(0, 8);
+                if (T[sor, oszlop] == '#')
                 {
-                    Random vel = new Random();
-                    int sor = vel.Next(0, 8);
-                    int oszlop = vel.Next(0, 8);
-                    if (T[sor, oszlop] == '#')
-                    {
-                        T[sor, oszlop] = 'K';
-                    }
+                    T[sor, oszlop] = 'K';
                 }
-            }                                
+            }
         }
         public void FajlbaIr()
         {
-    
+
         }
         public void Megjelenit()
         {
@@ -55,7 +52,7 @@ namespace Kiralyno
                 Console.WriteLine();
                 for (int j = 0; j < 8; j++)
                 {
-                    Console.Write("{0,-2}",T[i,j]);
+                    Console.Write("{0,-2}", T[i, j]);
                 }
             }
         }
