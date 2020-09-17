@@ -61,16 +61,47 @@ namespace Kiralyno
         public bool UresOszlop(int oszlop)
         {
             //Ha talál "K" akkor hamissal tér vissza
-            bool vissza = true;
             //üres-e a sor
             /*1 ciklus, a soron végig
              * ha T[sor[i] meg T[i, oszlop]
              * */
-            return vissza;
-        }
+            bool k = true;
+            for (int i = 0; i < 8; i++)
+            {
+                if (T[i, oszlop]=='K')
+                {
+                    k=false;
+                }           
+            }
+            if (k==false)
+            {
+                Console.WriteLine("Van királynő az oszlopban");
+            }
+            else
+            {
+                Console.WriteLine("Nincs Királynő az oszlopban");
+            }
+            return k;
+        }      
         public bool UresSor(int sor)
         {
-            return true;
+            bool k = true;
+            for (int i = 0; i < 8; i++)
+            {
+                if (T[i, sor] == 'K')
+                {
+                    k = false;
+                }
+            }
+            if (k == true)
+            {
+                Console.WriteLine("Van királynő a sorban");
+            }
+            else
+            {
+                Console.WriteLine("Nincs Királynő a sorban");
+            }
+            return k;
         }
     }
     class Program
@@ -83,7 +114,9 @@ namespace Kiralyno
             t.Megjelenit();
             t.Elhelyez(8);
             Console.WriteLine();
-            t.Megjelenit();         
+            t.Megjelenit();
+            t.UresOszlop(3);
+            t.UresSor(5);
             Console.ReadKey();
         }
     }
