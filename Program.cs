@@ -77,7 +77,7 @@ namespace Kiralyno
             t.Megjelenit();
             t.Elhelyez(8);
             Console.WriteLine();
-            t.Megjelenit();
+            t.Megjelenit();         
             Console.ReadKey();
         }
     }
