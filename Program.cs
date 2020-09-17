@@ -31,14 +31,16 @@ namespace Kiralyno
             //véletlen sor és oszlop
             //elhelyezzük a "K"t csak akkor, ha "#" van 
             Random vel = new Random();          
-            for (int i = 0; i < vel.Next(0,65); i++)
+            for (int i = 0; i < N; i++)
             {
                 int sor = vel.Next(0, 8);
                 int oszlop = vel.Next(0, 8);
-                if (T[sor, oszlop] == '#')
+                while (T[sor, oszlop] == 'K')
                 {
-                    T[sor, oszlop] = 'K';
+                    sor = vel.Next(0, 8);
+                    oszlop = vel.Next(0, 8);
                 }
+                T[sor, oszlop] = 'K';
             }
         }
         public void FajlbaIr()
